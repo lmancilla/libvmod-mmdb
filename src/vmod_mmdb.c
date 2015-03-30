@@ -36,7 +36,7 @@ vmod_load_db(const struct vrt_ctx *ctx, struct vmod_priv *priv, VCL_STRING filen
 }
 
 VCL_STRING
-vmod_get_country_from_ip(const struct vrt_ctx *ctx, struct vmod_priv *priv, VCL_STRING ip_str)
+vmod_get_code(const struct vrt_ctx *ctx, struct vmod_priv *priv, VCL_STRING ip_str)
 {
   const char *lookup_path[] = {"country", "iso_code", NULL};
 

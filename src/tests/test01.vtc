@@ -13,7 +13,7 @@ varnish v1 -vcl+backend {
   }
 
 	sub vcl_deliver {
-		set resp.http.X-GeoIP  = example.get_country_from_ip("200.83.42.79");
+		set resp.http.X-GeoIP  = mmdb.get_code("200.83.42.79");
 	}
 } -start
 
