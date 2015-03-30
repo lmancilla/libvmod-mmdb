@@ -8,7 +8,6 @@ Varnish Module
 
 :Date: 2015-03-30
 :Version: 1.0
-:Manual section: 3
 
 SYNOPSIS
 ========
