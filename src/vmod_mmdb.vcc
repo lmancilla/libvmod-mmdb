@@ -2,4 +2,4 @@ $Module mmdb 1 MaxmindDB VMOD
 
 $Init init_function
 $Function VOID load_db(PRIV_VCL, STRING)
-$Function STRING get_code(PRIV_VCL, STRING)
+$Function STRING get_code(PRIV_VCL, IP)

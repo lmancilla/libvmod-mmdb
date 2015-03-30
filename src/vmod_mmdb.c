@@ -36,12 +36,15 @@ vmod_load_db(const struct vrt_ctx *ctx, struct vmod_priv *priv, VCL_STRING filen
 }
 
 VCL_STRING
-vmod_get_code(const struct vrt_ctx *ctx, struct vmod_priv *priv, VCL_STRING ip_str)
+vmod_get_code(const struct vrt_ctx *ctx, struct vmod_priv *priv, const struct suckaddr *ip)
 {
   const char *lookup_path[] = {"country", "iso_code", NULL};
 
   char *data = NULL;
   int gai_error, mmdb_error, status;
+
+  // cast IP to STRING (VCL TYPES)
+  char *ip_str = VRT_IP_string(ctx, ip);
 
   MMDB_lookup_result_s result = MMDB_lookup_string(priv->priv, ip_str, &gai_error, &mmdb_error);
 
@@ -57,6 +60,8 @@ vmod_get_code(const struct vrt_ctx *ctx, struct vmod_priv *priv, VCL_STRING ip_s
 
   if (MMDB_SUCCESS != status || !entry_data.has_data || entry_data.type != MMDB_DATA_TYPE_UTF8_STRING)
     return 0;
+
+  syslog(0, );
 
   data = strndup(entry_data.utf8_string, entry_data.data_size);
   

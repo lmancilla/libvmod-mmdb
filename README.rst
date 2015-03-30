@@ -41,7 +41,7 @@ get_code
 Prototype
         ::
 
-                get_code(STRING IP_STR)
+                get_code(IP)
 Return value
 	STRING
 Description
@@ -49,7 +49,7 @@ Description
 Example
         ::
 
-                set resp.http.X-GeoIP = mmdb.get_code("x.x.x.x");
+                set resp.http.X-GeoIP = mmdb.get_code(client.ip);
 
 INSTALLATION
 ============
@@ -91,7 +91,7 @@ In your VCL you could then use this vmod along the following lines::
         }
 
         sub vcl_deliver {
-                set resp.http.X-GeoIP = mmdb.get_code("x.x.x.x");
+                set resp.http.X-GeoIP = mmdb.get_code(client.ip);
         }
 
 TESTING
