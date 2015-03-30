@@ -61,8 +61,6 @@ vmod_get_code(const struct vrt_ctx *ctx, struct vmod_priv *priv, const struct su
   if (MMDB_SUCCESS != status || !entry_data.has_data || entry_data.type != MMDB_DATA_TYPE_UTF8_STRING)
     return 0;
 
-  syslog(0, );
-
   data = strndup(entry_data.utf8_string, entry_data.data_size);
   
   return data;
