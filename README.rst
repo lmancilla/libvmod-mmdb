@@ -75,7 +75,7 @@ In your VCL you could then use this vmod along the following lines::
         import mmdb;
 
         sub vcl_init {
-                mmdb.load_db("/var/lib/")
+                mmdb.load_db("/var/lib/");
         }
 
         sub vcl_deliver {
