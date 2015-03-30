@@ -17,9 +17,19 @@ import mmdb;
 DESCRIPTION
 ===========
 
-Example Varnish vmod demonstrating how to write an out-of-tree Varnish vmod.
-
 Implements GeoIP as a vmod using MaxmindDB.
+
+DEPENDENCIES
+============
+
+First, download the database
+
+http://geolite.maxmind.com/download/geoip/database/GeoLite2-Country.mmdb.gz
+
+Second,
+
+apt-get install libmaxminddb-dev
+
 
 FUNCTIONS
 =========
@@ -75,7 +85,7 @@ In your VCL you could then use this vmod along the following lines::
         import mmdb;
 
         sub vcl_init {
-                mmdb.load_db("/var/lib/");
+                mmdb.load_db(/var/lib/geoip/GeoLite2-Country.mmdb.gz);
         }
 
         sub vcl_deliver {
