@@ -6,6 +6,7 @@ vmod_mmdb
 Varnish Module
 ----------------------
 
+:Author: Luis Mancilla Ávila
 :Date: 2015-03-30
 :Version: 1.0
 
