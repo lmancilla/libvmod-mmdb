@@ -44,7 +44,7 @@ Prototype
 Return value
 	STRING
 Description
-	Returns a two code letter for country
+	Returns a two iso code chars for country
 Example
         ::
 
@@ -85,7 +85,7 @@ In your VCL you could then use this vmod along the following lines::
         import mmdb;
 
         sub vcl_init {
-                mmdb.load_db(/var/lib/geoip/GeoLite2-Country.mmdb.gz);
+                mmdb.load_db("/var/lib/geoip/GeoLite2-Country.mmdb.gz");
         }
 
         sub vcl_deliver {
