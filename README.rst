@@ -35,7 +35,7 @@ FUNCTIONS
 =========
 
 get_code
------
+--------
 
 Prototype
         ::
@@ -71,6 +71,7 @@ the appropriate path. For mmdb, when varnishd configure was called
 with ``--prefix=$PREFIX``, use
 
  PKG_CONFIG_PATH=${PREFIX}/lib/pkgconfig
+
  export PKG_CONFIG_PATH
 
 Make targets:
@@ -91,6 +92,18 @@ In your VCL you could then use this vmod along the following lines::
         sub vcl_deliver {
                 set resp.http.X-GeoIP = mmdb.get_code("x.x.x.x");
         }
+
+TESTING
+=======
+
+        make check
+
+
+ACKNOWLEDGEMENTS
+================
+
+Some ideas taken from @simonvik.
+
 
 COMMON PROBLEMS
 ===============
