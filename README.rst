@@ -96,7 +96,7 @@ In your VCL you could then use this vmod along the following lines::
 TESTING
 =======
 
-        make check
+ make check
 
 
 ACKNOWLEDGEMENTS
