@@ -23,14 +23,14 @@ Implements GeoIP as a vmod using MaxmindDB.
 DEPENDENCIES
 ============
 
-First, download the database
+First, download the database, and gunzip it
 
 http://geolite.maxmind.com/download/geoip/database/GeoLite2-Country.mmdb.gz
 
 Second,
-
+```
 apt-get install libmaxminddb-dev
-
+```
 
 FUNCTIONS
 =========
@@ -87,7 +87,7 @@ In your VCL you could then use this vmod along the following lines::
         import mmdb;
 
         sub vcl_init {
-                mmdb.load_db("/var/lib/geoip/GeoLite2-Country.mmdb.gz");
+                mmdb.load_db("/var/lib/geoip/GeoLite2-Country.mmdb");
         }
 
         sub vcl_deliver {
